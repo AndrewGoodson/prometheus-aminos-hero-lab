@@ -1,0 +1,26 @@
+/* Prometheus Aminos brand tokens. See BRAND.md for when to use each. */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&display=swap");
+
+:root {
+  /* site (white pages) */
+  --ink: #111111;
+  --paper: #ffffff;
+  --warm: #f6f5f2;
+  --line: #e2e0db;
+  --muted: #5a5851;
+  --gold-text: #886b35;   /* gold that passes AA as text on white */
+
+  /* hero (black) */
+  --night: #040404;
+  --ivory: #f2f1ed;
+  --ash: #b9b6ad;
+  --gold: #c9a96b;        /* flame, chain, rules; decoration and large text only */
+  --gold-hi: #f1d49a;     /* lit highlights, sparks */
+  --ember: #e9a24a;       /* glow only, never text */
+
+  /* type */
+  --display: "EB Garamond", Georgia, serif;
+  --sans: "Montserrat", system-ui, sans-serif;
+  --label-track: 0.32em;
+  --button-track: 0.18em;
+}

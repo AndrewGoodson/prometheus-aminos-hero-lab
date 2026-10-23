@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The God's Torch</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Layout: one black hero (option A's world). Copy left; art right: a god in outline holds the torch, its flame drains into a chain of amino acids. */
+:root{
+  --bg:#ffffff; --fg:#111111; --muted:#5a5851; --line:#e2e0db; --gold-text:#886b35;
+  --night:#050505; --ivory:#f2f1ed; --ash:#b9b6ad; --gold:#c9a96b; --ember:#e8a24a;
+  --display:'EB Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--fg:#f2f1ed;--muted:#b4b0a4;--line:#2a2a2a;--gold-text:#d4b47a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--fg:#f2f1ed;--muted:#b4b0a4;--line:#2a2a2a;--gold-text:#d4b47a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px;display:grid;gap:22px}
+header h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,48px);margin:0}
+header p,.note{margin:6px 0 0;color:var(--muted);max-width:72ch}
+.note b{color:var(--fg);font-weight:600}
+.hero{background:var(--night);color:var(--ivory);display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:8px;padding:36px clamp(20px,4vw,52px);border:1px solid var(--line);overflow:hidden}
+.copy{min-width:0}
+.kicker{font-weight:600;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.h{font-family:var(--display);font-weight:400;line-height:1.02;font-size:clamp(42px,5.6vw,78px);margin:12px 0 14px;text-wrap:balance}
+.sub{color:var(--ash);max-width:38ch;margin:0 0 22px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:15px 22px;border:1px solid var(--ivory)}
+.btn.solid{background:var(--ivory);color:var(--night)}
+.art{width:100%;height:auto;display:block}
+.god{fill:#0d0c0a;stroke:var(--gold);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fold{fill:none;stroke:var(--gold);stroke-width:1.3;stroke-linecap:round;opacity:.7}
+.bond{stroke:#5a4a2c;stroke-width:2}
+@media (max-width:820px){.hero{grid-template-columns:1fr}.art{order:-1}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>The God's Torch</h1>
+    <p>A god in gold outline holds the torch high. Its flame thins out and pours, spark by spark, into a chain of amino acids that lights up link by link. Then it starts again.</p>
+  </header>
+
+  <div class="hero">
+    <div class="copy">
+      <div class="kicker">Prometheus Aminos</div>
+      <p class="h">Stolen from the Gods.</p>
+      <p class="sub">Research compounds, sold by size. Every batch tested by an independent lab.</p>
+      <div class="btns"><span class="btn solid">Shop</span><span class="btn">Lab Results</span></div>
+    </div>
+
+    <svg class="art" id="art" viewBox="0 0 640 500" style="overflow:visible" role="img" aria-label="A Greek god in gold outline raises a torch; its flame drains into a glowing chain of amino acids">
+      <defs>
+        <radialGradient id="haloGrad"><stop offset="0" stop-color="#e8a24a" stop-opacity=".55"/><stop offset="1" stop-color="#e8a24a" stop-opacity="0"/></radialGradient>
+        <radialGradient id="bead"><stop offset="0" stop-color="#ffe2a8"/><stop offset=".55" stop-color="#e8a24a"/><stop offset="1" stop-color="#9a5d1c"/></radialGradient>
+      </defs>
+
+      <circle id="halo" cx="262" cy="62" r="90" fill="url(#haloGrad)"/>
+
+      <!-- the god: standing, facing right, right arm raised with the torch -->
+      <path class="god" d="M146 66
+        C166 60 182 72 184 90 C185 96 190 100 188 104 C184 106 183 108 184 112 C186 116 183 118 182 122
+        C186 132 180 146 166 150 L164 158
+        C178 160 196 152 214 136 C228 122 240 108 250 96 L256 88
+        C262 82 274 84 274 94 C274 100 268 106 262 110
+        C252 124 240 140 226 154 C214 166 202 176 192 182
+        C196 210 194 236 188 258
+        C200 300 212 350 222 400 C226 424 232 446 236 470
+        L96 470
+        C100 440 104 410 108 380 C112 340 112 300 116 262
+        C110 230 112 196 122 170 C126 160 132 154 138 150
+        C128 144 122 132 122 116 C120 96 128 72 146 66 Z"/>
+      <!-- beard, hair band, drapery folds, lowered arm -->
+      <path class="fold" d="M182 122 C176 136 168 144 156 146"/>
+      <path class="fold" d="M128 92 C140 84 160 80 178 84"/>
+      <path class="fold" d="M140 172 C160 200 176 240 186 262"/>
+      <path class="fold" d="M126 200 C140 260 150 330 152 400 C153 430 152 452 150 470"/>
+      <path class="fold" d="M168 280 C180 330 190 390 196 470"/>
+      <path class="fold" d="M120 300 C126 350 128 410 126 470"/>
+      <path class="fold" d="M140 176 C134 214 132 246 134 286 C136 300 146 306 152 298"/>
+      <path class="fold" d="M190 182 C170 196 150 206 128 210"/>
+
+      <!-- torch in the raised hand -->
+      <svg id="torch" x="220" y="33" width="84" height="110" viewBox="0 0 64 84">
+        <g transform="translate(-37.4 -51.3) scale(.1535)">
+          <g fill="#f2f1ed"><rect x="364" y="632" width="196" height="40" rx="20" transform="rotate(-1.5 462 652)"/><rect x="392" y="692" width="146" height="34" rx="17" transform="rotate(-1.5 465 709)"/><path d="M424 742h22l-3 113h-18z"/><path d="M455 742h22l-1 113h-18z"/><path d="M486 742h22l-2 113h-18z"/></g>
+          <g id="flame" fill="#e8a24a" style="transform-origin:462px 630px"><path d="M476.76 621.82C474.5 613.03 478.93 603.82 481.89 595.71C486.57 582.91 493.49 569.14 503.23 559.25C508.35 554.05 514.8 550.08 520.52 545.59C527.35 540.24 533.65 533.49 538.93 526.61C546.05 517.3 559.65 495.59 558.56 483.67C557.85 475.84 551.12 469.46 551.17 461.58C565.76 460.85 573.36 479.36 576.17 491.08C576.86 493.97 576.76 496.94 577.39 499.82C578.85 506.5 580.83 512.64 580.97 519.64C581.46 544.37 578.69 576.5 559.14 594.31C548.8 603.72 528.8 611.22 515.65 615.56C505.72 618.84 486.77 625.53 476.76 621.82Z"/><path d="M347.56 501.8C354.4 505.27 353.37 517.97 355.31 524.52C357.62 532.34 366.71 542.24 373.19 547.1C379.16 551.58 386.09 552.01 390.73 555.43C394.69 558.35 402.48 570.58 405.92 575.2C413.03 584.78 426.23 596.58 436.7 602.28C440.5 604.34 452.02 609.61 452.62 614.07C453.37 619.6 445.04 619.03 441.76 618.61C433.02 617.49 423.93 618.08 415.27 616.7C411.74 616.14 408.26 614.55 404.75 613.71C384.76 608.93 356.96 589.17 348.62 570.11C346.37 564.98 344.07 558.33 343.25 552.78C342.82 549.89 343.17 546.95 342.6 544.07C340.49 533.45 339.96 510.37 347.56 501.8Z"/><path d="M438.05 338.18C446.88 334.78 458.18 341.2 466.23 344.6C474.22 347.97 479.74 352.68 485.9 358.66C488.72 361.39 491.92 363.27 494.3 366.49C497.4 370.69 501.01 377.04 502.46 382.06C503.12 384.35 503.05 386.78 503.64 389.08C504.41 392.18 505.74 395.1 506.38 398.24C507.03 401.4 506.86 404.59 507.18 407.78C508.48 421.12 507.98 430.73 505.57 443.98C504.84 448 502.91 451.22 501.15 454.83C496 465.37 488.16 474.95 478.74 482.07C461.78 494.88 438.93 502.13 429.4 522.9C423.16 536.52 424.04 550.42 425.94 564.86C426.81 571.44 431.02 578.21 428.75 584.81C419.95 580.88 411.02 567.28 405.27 559.54C379.28 524.58 384.42 480.89 409.74 447.37C423.42 429.27 443.39 414.94 450.86 392.81C455.28 379.75 453.98 368.23 447.72 356C444.73 350.15 437.96 345.11 438.05 338.18Z"/><path d="M444.44 564.49C434.36 562.81 439.13 545.75 443.21 540.13C450.01 530.78 456.88 531.04 465.72 525.92C476.63 519.6 485.85 511.68 493.71 501.88C504.24 488.73 508.63 472.42 511.1 456.01C511.39 454.07 510.51 452 510.86 450.09C511.51 446.57 516.2 446.24 518.63 447.75C524.23 451.22 525.03 459.48 526.89 465.14C528.42 469.8 529.77 474.04 529.51 479.02C528.82 492.18 517.45 513.23 508.12 522.42C502.69 527.77 495.2 532.39 488.4 535.79C483.61 538.18 478.34 540.91 473.13 542.14C467.62 543.45 461.57 543.07 456.4 545.63C448.92 549.33 448.08 557.93 444.44 564.49Z"/><path d="M401.88 409.68C399.91 415.08 396 419.83 393.36 424.96C389.49 432.5 387.37 442.11 385.72 450.4C383.35 462.31 385.22 480.27 380.94 490.73C370.77 490.1 365.99 475.55 364.2 467.24C360.27 448.95 362.55 441.29 374.3 426.62C377.5 422.62 379.89 419.05 384.2 416.12C389.75 412.35 394.78 408.2 401.88 409.68Z"/></g>
+        </g>
+      </svg>
+
+      <g id="chain"></g>
+      <g id="sparks"></g>
+    </svg>
+  </div>
+
+  <p class="note"><b>One note on the chain:</b> I drew it as a peptide chain (amino acids linked one after another, twisting like a helix), not the two-strand DNA ladder. Peptides are amino-acid chains. A DNA ladder would be the wrong molecule, and lab buyers would notice. The god here is a rough outline to show the idea. The final would be a proper gold engraving, drawn by an illustrator in this same style.</p>
+</div>
+
+<script>
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  var chain=document.getElementById('chain'), sparks=document.getElementById('sparks');
+  var flame=document.getElementById('flame'), halo=document.getElementById('halo');
+  var SRC={x:266,y:44};             // flame tip in art coordinates
+  var N=16, beads=[], i;
+  // helix-like peptide backbone: sweeps from near the torch out and down to the lower right
+  for(i=0;i<N;i++){
+    var t=i/(N-1);
+    var cx=330+t*270, cy=70+t*360;
+    var off=Math.sin(t*Math.PI*4.2)*34;
+    beads.push({x:cx+off*0.55, y:cy-off*0.35, r:9+ (i%3===0?3:0)});
+  }
+  for(i=0;i<N-1;i++){
+    var l=document.createElementNS(NS,'line');
+    l.setAttribute('x1',beads[i].x);l.setAttribute('y1',beads[i].y);
+    l.setAttribute('x2',beads[i+1].x);l.setAttribute('y2',beads[i+1].y);
+    l.setAttribute('class','bond'); chain.appendChild(l); beads[i].bond=l;
+  }
+  beads.forEach(function(b){
+    var g=document.createElementNS(NS,'circle');
+    g.setAttribute('cx',b.x);g.setAttribute('cy',b.y);g.setAttribute('r',b.r*1.8);
+    g.setAttribute('fill','url(#haloGrad)');g.setAttribute('opacity','0');
+    var c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',b.x);c.setAttribute('cy',b.y);c.setAttribute('r',b.r);
+    c.setAttribute('fill','#1a1712');c.setAttribute('stroke','#6b5a38');c.setAttribute('stroke-width','1.5');
+    chain.appendChild(g);chain.appendChild(c); b.glow=g; b.dot=c;
+  });
+
+  function light(b,on){
+    b.dot.setAttribute('fill',on?'url(#bead)':'#1a1712');
+    b.dot.setAttribute('stroke',on?'#ffd28a':'#6b5a38');
+    b.glow.setAttribute('opacity',on?'0.55':'0');
+    if(b.bond){b.bond.setAttribute('stroke',on?'#c9a96b':'#5a4a2c');}
+  }
+  function setFlame(s){
+    flame.style.transform='scale('+s+')';
+    halo.setAttribute('r',40+50*s); halo.setAttribute('opacity',0.4+0.6*s);
+  }
+
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){ beads.forEach(function(b){light(b,true);}); setFlame(0.45); return; }
+
+  var T=9000, start=performance.now(), live=[], lastSpawn=0, lit=-1;
+  function spawn(target,now){
+    var s=document.createElementNS(NS,'circle'); s.setAttribute('r',2.2+Math.random()*2);
+    s.setAttribute('fill','#f6c77e'); sparks.appendChild(s);
+    live.push({el:s,t0:now,dur:900+Math.random()*500,b:beads[target],
+      cx:(SRC.x+beads[target].x)/2+(Math.random()*80-20), cy:Math.min(SRC.y,beads[target].y)-30-Math.random()*60});
+  }
+  function frame(now){
+    var p=((now-start)%T)/T;
+    var fill=Math.min(p/0.75,1);
+    setFlame(1-0.62*fill + 0.04*Math.sin(now/90));
+    var want=Math.floor(fill*N)-1;
+    if(p<0.02 && lit>=0){ beads.forEach(function(b){light(b,false);}); lit=-1; }
+    if(p<0.78 && now-lastSpawn>45){ lastSpawn=now; spawn(Math.min(N-1,Math.max(0,want+1)),now); }
+    live=live.filter(function(o){
+      var k=(now-o.t0)/o.dur;
+      if(k>=1){ o.el.remove(); return false; }
+      var u=1-k, x=u*u*SRC.x+2*u*k*o.cx+k*k*o.b.x, y=u*u*SRC.y+2*u*k*o.cy+k*k*o.b.y;
+      o.el.setAttribute('cx',x);o.el.setAttribute('cy',y);o.el.setAttribute('opacity',k<0.85?1:(1-k)/0.15);
+      return true;
+    });
+    while(lit<want){ lit++; light(beads[lit],true); }
+    if(p>0.92){ var fade=(1-p)/0.08; beads.forEach(function(b){ if(b.glow.getAttribute('opacity')!=='0') b.glow.setAttribute('opacity',0.55*fade); }); }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>

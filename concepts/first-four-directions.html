@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stolen from the Gods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=EB+Garamond:wght@400;500&family=Libre+Baskerville&family=Playfair+Display:wght@400;500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Layout: one review sheet — a stack of full-width hero mockups, each labelled A–D, then a type comparison. */
+:root{
+  --bg:#ffffff; --fg:#111111; --muted:#5a5851; --line:#e2e0db; --panel:#f6f5f2; --gold-text:#886b35;
+  --display:'EB Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--fg:#f2f1ed;--muted:#b4b0a4;--line:#2a2a2a;--panel:#111111;--gold-text:#d4b47a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--fg:#f2f1ed;--muted:#b4b0a4;--line:#2a2a2a;--panel:#111111;--gold-text:#d4b47a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px;display:grid;gap:48px}
+header h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,48px);margin:0;text-wrap:balance}
+header p{margin:8px 0 0;color:var(--muted);max-width:62ch}
+.opt{display:grid;gap:14px}
+.opt-head{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.tag{font-weight:600;font-size:12px;letter-spacing:.18em;color:var(--gold-text)}
+.opt-head h2{font-family:var(--display);font-weight:500;font-size:28px;margin:0}
+.note{color:var(--muted);margin:0;max-width:75ch}
+.note b{color:var(--fg);font-weight:600}
+.hero{position:relative;overflow:hidden;min-height:420px;display:grid;align-items:center;border:1px solid var(--line)}
+.mark{display:block}
+.kicker{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.32em;text-transform:uppercase}
+.h{font-family:var(--display);font-weight:400;line-height:1.02;margin:12px 0 14px;text-wrap:balance}
+.sub{font-size:15px;max-width:42ch;margin:0 0 22px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:15px 22px;border:1px solid currentColor;background:none;color:inherit}
+.btn.solid{border-color:transparent}
+
+/* A — The Theft: black, torch, living flame */
+.a{background:#050505;color:#f2f1ed}
+.a .inner{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;padding:56px clamp(20px,5vw,64px)}
+.a .h{font-size:clamp(44px,7vw,92px)}
+.a .kicker{color:#c9a96b}
+.a .sub{color:#b9b6ad}
+.a .btn.solid{background:#f2f1ed;color:#050505}
+.a .torch{position:relative;justify-self:center;width:min(220px,40vw)}
+.a .torch svg{width:100%;height:auto;position:relative;z-index:1}
+.a .glow{position:absolute;left:50%;top:22%;width:150%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(232,170,80,.55) 0%,rgba(200,120,40,.18) 35%,transparent 65%);animation:breathe 3.6s ease-in-out infinite;border-radius:50%}
+@keyframes breathe{0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(.94)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.04)}}
+
+/* B — Olympus to earth: the flame crosses from the god's side to ours */
+.b{background:linear-gradient(180deg,#f4f2ed 0%,#ffffff 100%);color:#111}
+.b .inner{position:relative;min-height:440px;padding:48px clamp(20px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;align-items:end}
+.b .olympus{position:absolute;right:0;top:0;width:55%;height:62%;border-left:1px solid #d8d4ca;border-bottom:1px solid #d8d4ca;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(17,17,17,.05) 46px 48px)}
+.b .olympus span{position:absolute;right:18px;top:14px;font:600 11px var(--sans);letter-spacing:.3em;color:#6a6962}
+.b svg.arc{position:absolute;inset:0;width:100%;height:100%}
+.b .h{font-size:clamp(40px,6vw,80px)}
+.b .kicker{color:#886b35}
+.b .sub{color:#4b4a44}
+.b .btn.solid{background:#111;color:#fff}
+.b .torch{justify-self:end;width:min(120px,22vw);margin-bottom:8px}
+
+/* C — Black-figure vase: Greek key frieze, terracotta */
+.c{background:#b5562f;color:#140d09}
+.c .key{height:26px;background-color:#140d09;-webkit-mask:var(--meander) repeat-x center/52px 26px;mask:var(--meander) repeat-x center/52px 26px}
+.c .inner{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,56px);align-items:center;padding:40px clamp(20px,5vw,64px)}
+.c .medallion{width:min(240px,34vw);aspect-ratio:1;border-radius:50%;background:#140d09;display:grid;place-items:center;box-shadow:inset 0 0 0 6px #b5562f,inset 0 0 0 9px #140d09}
+.c .medallion svg{width:42%;height:auto}
+.c .h{font-size:clamp(40px,6vw,82px)}
+.c .kicker{color:#2a160c}
+.c .sub{color:#2a160c}
+.c .btn.solid{background:#140d09;color:#e9c9a8}
+.c{--meander:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 26'%3E%3Cpath d='M0 23h48V3H8v14h28V9H20v6h8' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E")}
+
+/* D — Marble and fire: split, statue photo left, vials right */
+.d{background:#0d0d0c;color:#f2f1ed}
+.d .inner{display:grid;grid-template-columns:1fr 1fr;min-height:440px}
+.d .marble{position:relative;background:radial-gradient(120% 90% at 30% 20%,#f1efea 0%,#d9d6cf 45%,#a9a59d 100%);display:grid;place-items:end start;padding:22px;color:#3f3e3a}
+.d .marble::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 38px,rgba(90,88,81,.08) 38px 39px),repeating-linear-gradient(35deg,transparent 0 70px,rgba(90,88,81,.06) 70px 71px)}
+.d .marble small{position:relative;z-index:1;font:600 11px var(--sans);letter-spacing:.24em;text-transform:uppercase}
+.d .copy{padding:48px clamp(20px,4vw,56px);display:grid;align-content:center;position:relative}
+.d .copy::before{content:"";position:absolute;left:-1px;top:50%;width:160px;height:160px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(232,170,80,.6),transparent 65%)}
+.d .h{font-size:clamp(40px,5.5vw,76px);position:relative}
+.d .kicker{color:#c9a96b;position:relative}
+.d .sub{color:#b9b6ad;position:relative}
+.d .btns{position:relative}
+.d .btn.solid{background:#f2f1ed;color:#0d0d0c}
+
+.cmp{width:100%;border-collapse:collapse}
+.tbl{overflow-x:auto}
+.cmp th,.cmp td{border-bottom:1px solid var(--line);padding:14px 10px;text-align:left;vertical-align:baseline}
+.cmp th{font:600 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cmp td.s{font-size:44px;line-height:1.1;white-space:nowrap}
+.cmp td.n{color:var(--muted);min-width:180px}
+.pick{font:600 11px var(--sans);letter-spacing:.16em;color:var(--gold-text)}
+
+@media (max-width:760px){
+  .a .inner,.b .inner,.d .inner{grid-template-columns:1fr}
+  .c .inner{grid-template-columns:1fr}
+  .a .torch{order:-1;width:120px}
+  .b .olympus{width:100%;height:30%}
+  .b .torch{justify-self:start}
+  .d .marble{min-height:200px}
+  .d .copy::before{left:50%;top:0}
+}
+/* Motion: the flame is alive in every option */
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flicker 1.6s ease-in-out infinite}
+@keyframes flicker{0%,100%{transform:scale(1,1) skewX(0)}20%{transform:scale(.97,1.05) skewX(-2deg)}45%{transform:scale(1.03,.96) skewX(2deg)}70%{transform:scale(.98,1.04) skewX(-1deg)}}
+.embers{position:absolute;left:50%;top:18%;width:60%;height:60%;transform:translateX(-50%);pointer-events:none}
+.embers i{position:absolute;bottom:0;width:4px;height:4px;border-radius:50%;background:#f0b860;box-shadow:0 0 8px 2px rgba(240,170,80,.7);opacity:0;animation:rise 3.2s linear infinite}
+.embers i:nth-child(1){left:42%;animation-delay:0s}
+.embers i:nth-child(2){left:55%;animation-delay:.8s}
+.embers i:nth-child(3){left:48%;animation-delay:1.6s}
+.embers i:nth-child(4){left:60%;animation-delay:2.2s}
+.embers i:nth-child(5){left:38%;animation-delay:2.7s}
+@keyframes rise{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(14px,-150px);opacity:0}}
+.d .copy::before{animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.a .glow,.flame,.embers i,.d .copy::before{animation:none}.embers{display:none}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <h1>Stolen from the Gods</h1>
+    <p>Four directions for the home page hero, built on Matt's line. These are layout and mood mockups at real size. The final art for B, C and D would be a commissioned illustration or public-domain museum artwork, not what is drawn here.</p>
+  </header>
+
+  <section class="opt" aria-labelledby="a-h">
+    <div class="opt-head"><span class="tag">OPTION A</span><h2 id="a-h">The Theft</h2></div>
+    <div class="hero a"><div class="inner">
+      <div>
+        <div class="kicker">Prometheus Aminos</div>
+        <p class="h">Stolen from<br>the Gods.</p>
+        <p class="sub">Research compounds, sold by size. Every batch tested by an independent lab.</p>
+        <div class="btns"><span class="btn solid">Shop</span><span class="btn">Lab Results</span></div>
+      </div>
+      <div class="torch"><div class="glow"></div><div class="embers" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 64 84" fill="#f2f1ed" aria-label="Torch"><g transform="translate(-37.4 -51.3) scale(.1535)"><g class="flame"><path d="M476.76 621.82C474.5 613.03 478.93 603.82 481.89 595.71C486.57 582.91 493.49 569.14 503.23 559.25C508.35 554.05 514.8 550.08 520.52 545.59C527.35 540.24 533.65 533.49 538.93 526.61C546.05 517.3 559.65 495.59 558.56 483.67C557.85 475.84 551.12 469.46 551.17 461.58C565.76 460.85 573.36 479.36 576.17 491.08C576.86 493.97 576.76 496.94 577.39 499.82C578.85 506.5 580.83 512.64 580.97 519.64C581.46 544.37 578.69 576.5 559.14 594.31C548.8 603.72 528.8 611.22 515.65 615.56C505.72 618.84 486.77 625.53 476.76 621.82Z"/><path d="M347.56 501.8C354.4 505.270 353.37 517.97 355.31 524.52C357.62 532.34 366.71 542.24 373.19 547.1C379.16 551.58 386.09 552.01 390.73 555.43C394.690 558.35 402.48 570.58 405.92 575.2C413.03 584.78 426.23 596.58 436.7 602.28C440.5 604.34 452.02 609.61 452.62 614.07C453.37 619.6 445.04 619.03 441.76 618.61C433.02 617.49 423.93 618.08 415.27 616.7C411.74 616.14 408.26 614.55 404.75 613.71C384.76 608.93 356.96 589.17 348.62 570.11C346.37 564.98 344.07 558.33 343.25 552.78C342.82 549.89 343.17 546.95 342.6 544.07C340.49 533.45 339.96 510.37 347.56 501.8Z"/><path d="M438.05 338.18C446.88 334.78 458.18 341.2 466.23 344.6C474.22 347.97 479.74 352.68 485.9 358.66C488.72 361.39 491.92 363.27 494.3 366.49C497.4 370.69 501.01 377.04 502.46 382.06C503.12 384.35 503.05 386.78 503.64 389.08C504.41 392.18 505.74 395.1 506.38 398.24C507.03 401.4 506.86 404.59 507.18 407.78C508.48 421.12 507.98 430.73 505.57 443.98C504.84 448 502.91 451.22 501.15 454.83C496 465.37 488.16 474.95 478.74 482.07C461.78 494.88 438.93 502.13 429.4 522.9C423.16 536.52 424.04 550.42 425.94 564.86C426.81 571.44 431.02 578.21 428.75 584.81C419.95 580.88 411.02 567.28 405.27 559.54C379.28 524.58 384.42 480.89 409.74 447.37C423.42 429.27 443.39 414.94 450.86 392.81C455.28 379.75 453.98 368.23 447.72 356C444.73 350.15 437.96 345.11 438.05 338.18Z"/><path d="M444.44 564.49C434.36 562.81 439.13 545.75 443.21 540.13C450.01 530.78 456.88 531.04 465.72 525.92C476.63 519.6 485.85 511.68 493.71 501.88C504.24 488.73 508.63 472.42 511.1 456.01C511.39 454.07 510.51 452 510.86 450.09C511.51 446.57 516.2 446.24 518.63 447.75C524.23 451.22 525.03 459.48 526.89 465.14C528.42 469.8 529.77 474.04 529.51 479.02C528.82 492.18 517.45 513.23 508.12 522.42C502.69 527.77 495.2 532.39 488.4 535.79C483.61 538.18 478.34 540.91 473.13 542.14C467.62 543.450 461.57 543.07 456.4 545.63C448.92 549.33 448.08 557.93 444.44 564.49Z"/><path d="M401.88 409.68C399.91 415.08 396 419.83 393.36 424.96C389.49 432.5 387.37 442.11 385.72 450.4C383.35 462.31 385.22 480.27 380.94 490.73C370.77 490.1 365.99 475.55 364.2 467.24C360.27 448.95 362.55 441.29 374.3 426.62C377.5 422.62 379.89 419.05 384.2 416.12C389.75 412.35 394.78 408.2 401.88 409.68Z"/></g><rect x="364" y="632" width="196" height="40" rx="20" transform="rotate(-1.5 462 652)"/><rect x="392" y="692" width="146" height="34" rx="17" transform="rotate(-1.5 465 709)"/><path d="M424 742h22l-3 113h-18z"/><path d="M455 742h22l-1 113h-18z"/><path d="M486 742h22l-2 113h-18z"/></g></svg></div>
+    </div></div>
+    <p class="note"><b>Black, the torch, a slow living glow on the flame.</b> Uses only what we already own (the logo), so it can ship this week. Strongest brand moment for the least risk.</p>
+  </section>
+
+  <section class="opt" aria-labelledby="b-h">
+    <div class="opt-head"><span class="tag">OPTION B</span><h2 id="b-h">Olympus to Earth</h2></div>
+    <div class="hero b"><div class="inner">
+      <div class="olympus"><span>OLYMPUS</span></div>
+      <svg class="arc" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true"><path d="M760 120 C 700 260, 900 300, 880 380" fill="none" stroke="#b8914a" stroke-width="1.5" stroke-dasharray="3 7"/><circle cx="760" cy="120" r="5" fill="#b8914a"/><circle r="6" fill="#e8a24a"><animateMotion dur="3s" repeatCount="indefinite" path="M760 120 C 700 260, 900 300, 880 380"/><animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite"/></circle></svg>
+      <div>
+        <div class="kicker">Prometheus Aminos</div>
+        <p class="h">Stolen from<br>the Gods.</p>
+        <p class="sub">Brought down for the bench. Every batch tested by an independent lab.</p>
+        <div class="btns"><span class="btn solid">Shop</span><span class="btn">Lab Results</span></div>
+      </div>
+      <svg class="torch" viewBox="0 0 64 84" fill="#111" aria-label="Torch"><g transform="translate(-37.4 -51.3) scale(.1535)"><g class="flame"><path d="M476.76 621.82C474.5 613.03 478.93 603.82 481.89 595.71C486.57 582.91 493.49 569.14 503.23 559.25C508.35 554.05 514.8 550.08 520.52 545.59C527.35 540.24 533.65 533.49 538.93 526.61C546.05 517.3 559.65 495.59 558.56 483.67C557.85 475.84 551.12 469.46 551.17 461.58C565.76 460.85 573.36 479.36 576.17 491.08C576.86 493.97 576.76 496.94 577.39 499.82C578.85 506.5 580.83 512.64 580.97 519.64C581.46 544.37 578.69 576.5 559.14 594.31C548.8 603.72 528.8 611.22 515.65 615.56C505.72 618.84 486.77 625.53 476.76 621.82Z"/><path d="M347.56 501.8C354.4 505.270 353.37 517.97 355.31 524.52C357.62 532.34 366.71 542.24 373.19 547.1C379.16 551.58 386.09 552.01 390.73 555.43C394.690 558.35 402.48 570.58 405.92 575.2C413.03 584.78 426.23 596.58 436.7 602.28C440.5 604.34 452.02 609.61 452.62 614.07C453.37 619.6 445.04 619.03 441.76 618.61C433.02 617.49 423.93 618.08 415.27 616.7C411.74 616.14 408.26 614.55 404.75 613.71C384.76 608.93 356.96 589.17 348.62 570.11C346.37 564.98 344.07 558.33 343.25 552.78C342.82 549.89 343.17 546.95 342.6 544.07C340.49 533.45 339.96 510.37 347.56 501.8Z"/><path d="M438.05 338.18C446.88 334.78 458.18 341.2 466.23 344.6C474.22 347.97 479.74 352.68 485.9 358.66C488.72 361.39 491.92 363.27 494.3 366.49C497.4 370.69 501.01 377.04 502.46 382.06C503.12 384.35 503.05 386.78 503.64 389.08C504.41 392.18 505.74 395.1 506.38 398.24C507.03 401.4 506.86 404.59 507.18 407.78C508.48 421.12 507.98 430.73 505.57 443.98C504.84 448 502.91 451.22 501.15 454.83C496 465.37 488.16 474.95 478.74 482.07C461.78 494.88 438.93 502.13 429.4 522.9C423.16 536.52 424.04 550.42 425.94 564.86C426.81 571.44 431.02 578.21 428.75 584.81C419.95 580.88 411.02 567.28 405.27 559.54C379.28 524.58 384.42 480.89 409.74 447.37C423.42 429.27 443.39 414.94 450.86 392.81C455.28 379.75 453.98 368.23 447.72 356C444.73 350.15 437.96 345.11 438.05 338.18Z"/><path d="M444.44 564.49C434.36 562.81 439.13 545.75 443.21 540.13C450.01 530.78 456.88 531.04 465.72 525.92C476.63 519.6 485.85 511.68 493.71 501.88C504.24 488.73 508.63 472.42 511.1 456.01C511.39 454.07 510.51 452 510.86 450.09C511.51 446.57 516.2 446.24 518.63 447.75C524.23 451.22 525.03 459.48 526.89 465.14C528.42 469.8 529.77 474.04 529.51 479.02C528.82 492.18 517.45 513.23 508.12 522.42C502.69 527.77 495.2 532.39 488.4 535.79C483.61 538.18 478.34 540.91 473.13 542.14C467.62 543.450 461.57 543.07 456.4 545.63C448.92 549.33 448.08 557.93 444.44 564.49Z"/><path d="M401.88 409.68C399.91 415.08 396 419.83 393.36 424.96C389.49 432.5 387.37 442.11 385.72 450.4C383.35 462.31 385.22 480.27 380.94 490.73C370.77 490.1 365.99 475.55 364.2 467.24C360.27 448.95 362.55 441.29 374.3 426.62C377.5 422.62 379.89 419.05 384.2 416.12C389.75 412.35 394.78 408.2 401.88 409.68Z"/></g><rect x="364" y="632" width="196" height="40" rx="20" transform="rotate(-1.5 462 652)"/><rect x="392" y="692" width="146" height="34" rx="17" transform="rotate(-1.5 465 709)"/><path d="M424 742h22l-3 113h-18z"/><path d="M455 742h22l-1 113h-18z"/><path d="M486 742h22l-2 113h-18z"/></g></svg>
+    </div></div>
+    <p class="note"><b>Your idea: the god's side and ours.</b> The top right becomes a classical engraving (a god's hand, temple columns). A gold line traces the flame falling from it into our torch. Light and airy, matches the current site. Needs one commissioned engraving.</p>
+  </section>
+
+  <section class="opt" aria-labelledby="c-h">
+    <div class="opt-head"><span class="tag">OPTION C</span><h2 id="c-h">The Vase</h2></div>
+    <div class="hero c">
+      <div class="key"></div>
+      <div class="inner">
+        <div class="medallion"><svg viewBox="0 0 64 84" fill="#b5562f" aria-label="Torch"><g transform="translate(-37.4 -51.3) scale(.1535)"><g class="flame"><path d="M476.76 621.82C474.5 613.03 478.93 603.82 481.89 595.71C486.57 582.91 493.49 569.14 503.23 559.25C508.35 554.05 514.8 550.08 520.52 545.59C527.35 540.24 533.65 533.49 538.93 526.61C546.05 517.3 559.65 495.59 558.56 483.67C557.85 475.84 551.12 469.46 551.17 461.58C565.76 460.85 573.36 479.36 576.17 491.08C576.86 493.97 576.76 496.94 577.39 499.82C578.85 506.5 580.83 512.64 580.97 519.64C581.46 544.37 578.69 576.5 559.14 594.31C548.8 603.72 528.8 611.22 515.65 615.56C505.72 618.84 486.77 625.53 476.76 621.82Z"/><path d="M347.56 501.8C354.4 505.270 353.37 517.97 355.31 524.52C357.62 532.34 366.71 542.24 373.19 547.1C379.16 551.58 386.09 552.01 390.73 555.43C394.690 558.35 402.48 570.58 405.92 575.2C413.03 584.78 426.23 596.58 436.7 602.28C440.5 604.34 452.02 609.61 452.62 614.07C453.37 619.6 445.04 619.03 441.76 618.61C433.02 617.49 423.93 618.08 415.27 616.7C411.74 616.14 408.26 614.55 404.75 613.71C384.76 608.93 356.96 589.17 348.62 570.11C346.37 564.98 344.07 558.33 343.25 552.78C342.82 549.89 343.17 546.95 342.6 544.07C340.49 533.45 339.96 510.37 347.56 501.8Z"/><path d="M438.05 338.18C446.88 334.78 458.18 341.2 466.23 344.6C474.22 347.97 479.74 352.68 485.9 358.66C488.72 361.39 491.92 363.27 494.3 366.49C497.4 370.69 501.01 377.04 502.46 382.06C503.12 384.35 503.05 386.78 503.64 389.08C504.41 392.18 505.74 395.1 506.38 398.24C507.03 401.4 506.86 404.59 507.18 407.78C508.48 421.12 507.98 430.73 505.57 443.98C504.84 448 502.91 451.22 501.15 454.83C496 465.37 488.16 474.95 478.74 482.07C461.78 494.88 438.93 502.13 429.4 522.9C423.16 536.52 424.04 550.42 425.94 564.86C426.81 571.44 431.02 578.21 428.75 584.81C419.95 580.88 411.02 567.28 405.27 559.54C379.28 524.58 384.42 480.89 409.74 447.37C423.42 429.27 443.39 414.94 450.86 392.81C455.28 379.75 453.98 368.23 447.72 356C444.73 350.15 437.96 345.11 438.05 338.18Z"/><path d="M444.44 564.49C434.36 562.81 439.13 545.75 443.21 540.13C450.01 530.78 456.88 531.04 465.72 525.92C476.63 519.6 485.85 511.68 493.71 501.88C504.24 488.73 508.63 472.42 511.1 456.01C511.39 454.07 510.51 452 510.86 450.09C511.51 446.57 516.2 446.24 518.63 447.75C524.23 451.22 525.03 459.48 526.89 465.14C528.42 469.8 529.77 474.04 529.51 479.02C528.82 492.18 517.45 513.23 508.12 522.42C502.69 527.77 495.2 532.39 488.4 535.79C483.61 538.18 478.34 540.91 473.13 542.14C467.62 543.450 461.57 543.07 456.4 545.63C448.92 549.33 448.08 557.93 444.44 564.49Z"/><path d="M401.88 409.68C399.91 415.08 396 419.83 393.36 424.96C389.49 432.5 387.37 442.11 385.72 450.4C383.35 462.31 385.22 480.27 380.94 490.73C370.77 490.1 365.99 475.55 364.2 467.24C360.27 448.95 362.55 441.29 374.3 426.62C377.5 422.62 379.89 419.05 384.2 416.12C389.75 412.35 394.78 408.2 401.88 409.68Z"/></g><rect x="364" y="632" width="196" height="40" rx="20" transform="rotate(-1.5 462 652)"/><rect x="392" y="692" width="146" height="34" rx="17" transform="rotate(-1.5 465 709)"/><path d="M424 742h22l-3 113h-18z"/><path d="M455 742h22l-1 113h-18z"/><path d="M486 742h22l-2 113h-18z"/></g></svg></div>
+        <div>
+          <div class="kicker">Prometheus Aminos</div>
+          <p class="h">Stolen from<br>the Gods.</p>
+          <p class="sub">The oldest story about fire, told the way the Greeks told it: on pottery.</p>
+          <div class="btns"><span class="btn solid">Shop</span><span class="btn">Lab Results</span></div>
+        </div>
+      </div>
+      <div class="key"></div>
+    </div>
+    <p class="note"><b>Black-figure pottery, Greek key borders.</b> The medallion would hold real ancient art: a 6th-century BC Greek cup showing Prometheus survives and is public domain. Most distinctive; also the biggest departure from the current black-and-white look.</p>
+  </section>
+
+  <section class="opt" aria-labelledby="d-h">
+    <div class="opt-head"><span class="tag">OPTION D</span><h2 id="d-h">Marble and Fire</h2></div>
+    <div class="hero d"><div class="inner">
+      <div class="marble"><small>Statue photograph here</small></div>
+      <div class="copy">
+        <div class="kicker">Prometheus Aminos</div>
+        <p class="h">Stolen from<br>the Gods.</p>
+        <p class="sub">Research compounds, sold by size. Every batch tested by an independent lab.</p>
+        <div class="btns"><span class="btn solid">Shop</span><span class="btn">Lab Results</span></div>
+      </div>
+    </div></div>
+    <p class="note"><b>Split screen: a marble god on the left, the flame glowing at the seam, our words on the right.</b> Museum photos of Zeus statues are free to use. Most dramatic and photographic. On phones the statue stacks on top.</p>
+  </section>
+
+  <section class="opt" aria-labelledby="q-h">
+    <div class="opt-head"><span class="tag">THE Q</span><h2 id="q-h">Heading font with a normal Q</h2></div>
+    <p class="note">The page's own headings above are set in EB Garamond, so the Q in "THE Q" heading is the recommended normal one. The long swooping Q is how our current heading font (Cormorant Garamond) draws it. It has no plain-Q option. Swapping the heading font fixes it everywhere. The logo is a separate image and does not change.</p>
+    <div class="tbl"><table class="cmp">
+      <thead><tr><th>Font</th><th>Sample</th><th>Feel</th></tr></thead>
+      <tbody>
+        <tr><td class="n">Cormorant Garamond (now)</td><td class="s" style="font-family:'Cormorant Garamond',serif">Quality · QR code</td><td class="n">Elegant, the tail you dislike</td></tr>
+        <tr><td class="n">EB Garamond <span class="pick">RECOMMENDED</span></td><td class="s" style="font-family:'EB Garamond',serif">Quality · QR code</td><td class="n">Same classical feel, short tidy Q, easier to read</td></tr>
+        <tr><td class="n">Libre Baskerville</td><td class="s" style="font-family:'Libre Baskerville',serif;font-size:36px">Quality · QR code</td><td class="n">Sturdier, bookish, very readable</td></tr>
+        <tr><td class="n">Playfair Display</td><td class="s" style="font-family:'Playfair Display',serif">Quality · QR code</td><td class="n">High contrast, fashion-magazine</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+</div>
+
+</body>
+</html>

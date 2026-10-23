@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Fire Passed Down</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Layout: three stacked black heroes (option A's world), each a different landing for the fire, with notes underneath. */
+:root{
+  --bg:#ffffff; --fg:#111111; --muted:#5a5851; --line:#e2e0db; --gold-text:#886b35;
+  --night:#050505; --ivory:#f2f1ed; --ash:#b9b6ad; --gold:#c9a96b; --ember:#e8a24a;
+  --display:'EB Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--fg:#f2f1ed;--muted:#b4b0a4;--line:#2a2a2a;--gold-text:#d4b47a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--fg:#f2f1ed;--muted:#b4b0a4;--line:#2a2a2a;--gold-text:#d4b47a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px;display:grid;gap:48px}
+header h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,48px);margin:0;text-wrap:balance}
+header p{margin:8px 0 0;color:var(--muted);max-width:64ch}
+.opt{display:grid;gap:14px}
+.opt-head{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.tag{font-weight:600;font-size:12px;letter-spacing:.18em;color:var(--gold-text)}
+.opt-head h2{font-family:var(--display);font-weight:500;font-size:28px;margin:0}
+.note{color:var(--muted);margin:0;max-width:75ch}
+.note b{color:var(--fg);font-weight:600}
+.hero{background:var(--night);color:var(--ivory);display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:8px;padding:40px clamp(20px,5vw,56px);border:1px solid var(--line);overflow:hidden}
+.copy{min-width:0}
+.kicker{font-weight:600;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.h{font-family:var(--display);font-weight:400;line-height:1.02;font-size:clamp(42px,6vw,80px);margin:12px 0 14px;text-wrap:balance}
+.sub{color:var(--ash);max-width:40ch;margin:0 0 22px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:15px 22px;border:1px solid var(--ivory)}
+.btn.solid{background:var(--ivory);color:var(--night)}
+.art{width:100%;height:auto;max-width:100%;display:block}
+.line{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.torchfill{fill:var(--ivory)}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flicker 1.4s ease-in-out infinite}
+@keyframes flicker{0%,100%{transform:scale(1,1) skewX(0)}25%{transform:scale(.96,1.06) skewX(-2deg)}55%{transform:scale(1.04,.95) skewX(2deg)}80%{transform:scale(.98,1.03)}}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.art{order:-1;max-width:480px;justify-self:center}}
+@media (prefers-reduced-motion:reduce){.flame{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>The Fire Passed Down</h1>
+    <p>Option A's black hero, with a god's hand handing the flame on. In each one the fire goes to the torch or to the lab, never into a body. The hands here are rough placeholder line art; the final drawing would be a proper gold engraving after Michelangelo's reaching hands, which are public domain.</p>
+  </header>
+
+  <!-- 1. Hand to hand -->
+  <section class="opt" aria-labelledby="o1">
+    <div class="opt-head"><span class="tag">CONCEPT 1</span><h2 id="o1">Hand to Hand</h2></div>
+    <div class="hero">
+      <div class="copy">
+        <div class="kicker">Prometheus Aminos</div>
+        <p class="h">Stolen from the Gods.</p>
+        <p class="sub">Research compounds, sold by size. Every batch tested by an independent lab.</p>
+        <div class="btns"><span class="btn solid">Shop</span><span class="btn">Lab Results</span></div>
+      </div>
+      <svg class="art" viewBox="0 0 600 440" role="img" aria-label="A god's hand from above passes a spark of fire to a torch held in a human hand">
+        <defs><radialGradient id="g1"><stop offset="0" stop-color="#e8a24a" stop-opacity=".65"/><stop offset="1" stop-color="#e8a24a" stop-opacity="0"/></radialGradient></defs>
+        <!-- god's hand: from upper right, index finger pointing down-left; tip at (352,168) -->
+        <g transform="translate(352 168) rotate(-28) scale(-1 1) translate(-276 -46)">
+          <path class="line" d="M0 38 L140 40 C160 38 178 34 192 36 L268 40 C278 41 280 51 270 52 L204 52 C216 58 220 70 206 72 L190 68 C202 76 204 88 190 89 L176 84 C168 92 152 90 140 82 L0 82"/>
+          <path class="line" d="M24 30 C60 22 100 26 130 32" opacity=".45"/>
+        </g>
+        <!-- human hand holding the torch, from lower left -->
+        <path class="line" d="M40 440 C90 400 150 372 205 360"/>
+        <path class="line" d="M70 440 C120 412 168 392 214 386"/>
+        <path class="line" d="M205 360 C222 350 240 352 246 362 M210 372 C228 362 246 364 250 374 M214 386 C232 376 248 378 252 388"/>
+        <!-- torch -->
+        <svg x="206" y="196" width="104" height="136" viewBox="0 0 64 84">
+          <g transform="translate(-37.4 -51.3) scale(.1535)">
+            <g class="torchfill"><rect x="364" y="632" width="196" height="40" rx="20" transform="rotate(-1.5 462 652)"/><rect x="392" y="692" width="146" height="34" rx="17" transform="rotate(-1.5 465 709)"/><path d="M424 742h22l-3 113h-18z"/><path d="M455 742h22l-1 113h-18z"/><path d="M486 742h22l-2 113h-18z"/></g>
+            <g fill="#e8a24a" opacity="0">
+              <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.42;.5;.9;1" dur="4.5s" repeatCount="indefinite"/>
+              <g class="flame"><path d="M476.76 621.82C474.5 613.03 478.93 603.82 481.89 595.71C486.57 582.91 493.49 569.14 503.23 559.25C508.35 554.05 514.8 550.08 520.52 545.59C527.35 540.24 533.65 533.49 538.93 526.61C546.05 517.3 559.65 495.59 558.56 483.67C557.85 475.84 551.12 469.46 551.17 461.58C565.76 460.85 573.36 479.36 576.17 491.08C576.86 493.97 576.76 496.94 577.39 499.82C578.85 506.5 580.83 512.64 580.97 519.64C581.46 544.37 578.69 576.5 559.14 594.31C548.8 603.72 528.8 611.22 515.65 615.56C505.72 618.84 486.77 625.53 476.76 621.82Z"/><path d="M347.56 501.8C354.4 505.27 353.37 517.97 355.31 524.52C357.62 532.34 366.71 542.24 373.19 547.1C379.16 551.58 386.09 552.01 390.73 555.43C394.69 558.35 402.48 570.58 405.92 575.2C413.03 584.78 426.23 596.58 436.7 602.28C440.5 604.34 452.02 609.61 452.62 614.07C453.37 619.6 445.04 619.03 441.76 618.61C433.02 617.49 423.93 618.08 415.27 616.7C411.74 616.14 408.26 614.55 404.75 613.71C384.76 608.93 356.96 589.17 348.62 570.11C346.37 564.98 344.07 558.33 343.25 552.78C342.82 549.89 343.17 546.95 342.6 544.07C340.49 533.45 339.96 510.37 347.56 501.8Z"/><path d="M438.05 338.18C446.88 334.78 458.18 341.2 466.23 344.6C474.22 347.97 479.74 352.68 485.9 358.66C488.72 361.39 491.92 363.27 494.3 366.49C497.4 370.69 501.01 377.04 502.46 382.06C503.12 384.35 503.05 386.78 503.64 389.08C504.41 392.18 505.74 395.1 506.38 398.24C507.03 401.4 506.86 404.59 507.18 407.78C508.48 421.12 507.98 430.73 505.57 443.98C504.84 448 502.91 451.22 501.15 454.83C496 465.37 488.16 474.95 478.74 482.07C461.78 494.88 438.93 502.13 429.4 522.9C423.16 536.52 424.04 550.42 425.94 564.86C426.81 571.44 431.02 578.21 428.75 584.81C419.95 580.88 411.02 567.28 405.27 559.54C379.28 524.58 384.42 480.89 409.74 447.37C423.42 429.27 443.39 414.94 450.86 392.81C455.28 379.75 453.98 368.23 447.72 356C444.73 350.15 437.96 345.11 438.05 338.18Z"/><path d="M444.44 564.49C434.36 562.81 439.13 545.75 443.21 540.13C450.01 530.78 456.88 531.04 465.72 525.92C476.63 519.6 485.85 511.68 493.71 501.88C504.24 488.73 508.63 472.42 511.1 456.01C511.39 454.07 510.51 452 510.86 450.09C511.51 446.57 516.2 446.24 518.63 447.75C524.23 451.22 525.03 459.48 526.89 465.14C528.42 469.8 529.77 474.04 529.51 479.02C528.82 492.18 517.45 513.23 508.12 522.42C502.69 527.77 495.2 532.39 488.4 535.79C483.61 538.18 478.34 540.91 473.13 542.14C467.62 543.45 461.57 543.07 456.4 545.63C448.92 549.33 448.08 557.93 444.44 564.49Z"/><path d="M401.88 409.68C399.91 415.08 396 419.83 393.36 424.96C389.49 432.5 387.37 442.11 385.72 450.4C383.35 462.31 385.22 480.27 380.94 490.73C370.77 490.1 365.99 475.55 364.2 467.24C360.27 448.95 362.55 441.29 374.3 426.62C377.5 422.62 379.89 419.05 384.2 416.12C389.75 412.35 394.78 408.2 401.88 409.68Z"/></g>
+            </g>
+          </g>
+        </svg>
+        <!-- glow + spark from fingertip to torch top -->
+        <circle cx="258" cy="210" r="70" fill="url(#g1)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.42;.5;.9;1" dur="4.5s" repeatCount="indefinite"/></circle>
+        <circle cx="352" cy="168" r="10" fill="url(#g1)"><animate attributeName="r" values="8;14;8" dur="1.5s" repeatCount="indefinite"/></circle>
+        <circle r="5" fill="#f3c27a">
+          <animateMotion dur="4.5s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.15;.45;1" calcMode="linear" path="M352 168 C 320 160 285 175 262 214"/>
+          <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.15;.43;.47;1" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+    <p class="note"><b>The god's hand reaches down, a spark jumps the gap, and the torch in a human hand catches fire.</b> The clearest "stolen from the gods" picture. The human holds the fire as a tool, nothing goes into their body.</p>
+  </section>
+
+  <!-- 2. Hand to the lab -->
+  <section class="opt" aria-labelledby="o2">
+    <div class="opt-head"><span class="tag">CONCEPT 2</span><h2 id="o2">Hand to the Lab</h2></div>
+    <div class="hero">
+      <div class="copy">
+        <div class="kicker">Prometheus Aminos</div>
+        <p class="h">Stolen from the Gods.</p>
+        <p class="sub">Brought down for the bench. Every batch tested by an independent lab.</p>
+        <div class="btns"><span class="btn solid">Shop</span><span class="btn">Lab Results</span></div>
+      </div>
+      <svg class="art" viewBox="0 0 600 440" role="img" aria-label="A god's hand from above drops a spark of fire into a glass vial, which glows">
+        <defs><radialGradient id="g2"><stop offset="0" stop-color="#e8a24a" stop-opacity=".6"/><stop offset="1" stop-color="#e8a24a" stop-opacity="0"/></radialGradient>
+        <clipPath id="vialclip"><rect x="262" y="262" width="76" height="140" rx="10"/></clipPath></defs>
+        <!-- god's hand pointing straight down; tip at (300,150) -->
+        <g transform="translate(300 150) rotate(90) translate(-276 -46)">
+          <path class="line" d="M60 38 L140 40 C160 38 178 34 192 36 L268 40 C278 41 280 51 270 52 L204 52 C216 58 220 70 206 72 L190 68 C202 76 204 88 190 89 L176 84 C168 92 152 90 140 82 L60 82"/>
+        </g>
+        <circle cx="300" cy="150" r="10" fill="url(#g2)"><animate attributeName="r" values="8;14;8" dur="1.5s" repeatCount="indefinite"/></circle>
+        <!-- vial -->
+        <circle cx="300" cy="330" r="110" fill="url(#g2)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.42;.52;.9;1" dur="4.5s" repeatCount="indefinite"/></circle>
+        <rect x="270" y="226" width="60" height="26" rx="4" fill="#7a4fb0"/>
+        <rect x="276" y="250" width="48" height="14" fill="#b9b6ad"/>
+        <rect x="262" y="262" width="76" height="140" rx="10" fill="none" stroke="#f2f1ed" stroke-opacity=".7" stroke-width="2"/>
+        <g clip-path="url(#vialclip)"><rect x="262" y="402" width="76" height="0" fill="#e8a24a" opacity=".85">
+          <animate attributeName="y" values="402;402;330;330;402" keyTimes="0;.45;.6;.9;1" dur="4.5s" repeatCount="indefinite"/>
+          <animate attributeName="height" values="0;0;72;72;0" keyTimes="0;.45;.6;.9;1" dur="4.5s" repeatCount="indefinite"/>
+        </rect></g>
+        <rect x="272" y="300" width="56" height="44" fill="#111"/>
+        <text x="300" y="320" text-anchor="middle" fill="#f2f1ed" font-family="EB Garamond, Georgia, serif" font-size="11">PROMETHEUS</text>
+        <text x="300" y="336" text-anchor="middle" fill="#f2f1ed" font-family="EB Garamond, Georgia, serif" font-size="10">AMINOS</text>
+        <circle r="5" fill="#f3c27a">
+          <animateMotion dur="4.5s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.15;.45;1" calcMode="linear" path="M300 150 L300 240"/>
+          <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.15;.43;.47;1" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+    <p class="note"><b>The god's hand lets one spark fall into a vial, which fills with gold light.</b> The safest version: fire goes straight to the lab. Ties the story to the product without any person in the picture.</p>
+  </section>
+
+  <!-- 3. Hand to torch to the lab -->
+  <section class="opt" aria-labelledby="o3">
+    <div class="opt-head"><span class="tag">CONCEPT 3</span><h2 id="o3">From Olympus to the Bench</h2></div>
+    <div class="hero">
+      <div class="copy">
+        <div class="kicker">Prometheus Aminos</div>
+        <p class="h">Stolen from the Gods.</p>
+        <p class="sub">Research compounds, sold by size. Every batch tested by an independent lab.</p>
+        <div class="btns"><span class="btn solid">Shop</span><span class="btn">Lab Results</span></div>
+      </div>
+      <svg class="art" viewBox="0 0 600 440" role="img" aria-label="A god's hand lights the torch, and the torch lights a row of three vials one by one">
+        <defs><radialGradient id="g3"><stop offset="0" stop-color="#e8a24a" stop-opacity=".6"/><stop offset="1" stop-color="#e8a24a" stop-opacity="0"/></radialGradient></defs>
+        <g transform="translate(250 120) rotate(-28) scale(-1 1) translate(-276 -46)">
+          <path class="line" d="M0 38 L140 40 C160 38 178 34 192 36 L268 40 C278 41 280 51 270 52 L204 52 C216 58 220 70 206 72 L190 68 C202 76 204 88 190 89 L176 84 C168 92 152 90 140 82 L0 82"/>
+        </g>
+        <circle cx="250" cy="120" r="10" fill="url(#g3)"><animate attributeName="r" values="8;14;8" dur="1.5s" repeatCount="indefinite"/></circle>
+        <!-- torch -->
+        <svg x="120" y="160" width="96" height="126" viewBox="0 0 64 84">
+          <g transform="translate(-37.4 -51.3) scale(.1535)">
+            <g class="torchfill"><rect x="364" y="632" width="196" height="40" rx="20" transform="rotate(-1.5 462 652)"/><rect x="392" y="692" width="146" height="34" rx="17" transform="rotate(-1.5 465 709)"/><path d="M424 742h22l-3 113h-18z"/><path d="M455 742h22l-1 113h-18z"/><path d="M486 742h22l-2 113h-18z"/></g>
+            <g fill="#e8a24a" opacity="0">
+              <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.28;.33;.94;1" dur="6s" repeatCount="indefinite"/>
+              <g class="flame"><path d="M476.76 621.82C474.5 613.03 478.93 603.82 481.89 595.71C486.57 582.91 493.49 569.14 503.23 559.25C508.35 554.05 514.8 550.08 520.52 545.59C527.35 540.24 533.65 533.49 538.93 526.61C546.05 517.3 559.65 495.59 558.56 483.67C557.85 475.84 551.12 469.46 551.17 461.58C565.76 460.85 573.36 479.36 576.17 491.08C576.86 493.97 576.76 496.94 577.39 499.82C578.85 506.5 580.83 512.64 580.97 519.64C581.46 544.37 578.69 576.5 559.14 594.31C548.8 603.72 528.8 611.22 515.65 615.56C505.72 618.84 486.77 625.53 476.76 621.82Z"/><path d="M347.56 501.8C354.4 505.27 353.37 517.97 355.31 524.52C357.62 532.34 366.71 542.24 373.19 547.1C379.16 551.58 386.09 552.01 390.73 555.43C394.69 558.35 402.48 570.58 405.92 575.2C413.03 584.78 426.23 596.58 436.7 602.28C440.5 604.34 452.02 609.61 452.62 614.07C453.37 619.6 445.04 619.03 441.76 618.61C433.02 617.49 423.93 618.08 415.27 616.7C411.74 616.14 408.26 614.55 404.75 613.71C384.76 608.93 356.96 589.17 348.62 570.11C346.37 564.98 344.07 558.33 343.25 552.78C342.82 549.89 343.17 546.95 342.6 544.07C340.49 533.45 339.96 510.37 347.56 501.8Z"/><path d="M438.05 338.18C446.88 334.78 458.18 341.2 466.23 344.6C474.22 347.97 479.74 352.68 485.9 358.66C488.72 361.39 491.92 363.27 494.3 366.49C497.4 370.69 501.01 377.04 502.46 382.06C503.12 384.35 503.05 386.78 503.64 389.08C504.41 392.18 505.74 395.1 506.38 398.24C507.03 401.4 506.86 404.59 507.18 407.78C508.48 421.12 507.98 430.73 505.57 443.98C504.84 448 502.91 451.22 501.15 454.83C496 465.37 488.16 474.95 478.74 482.07C461.78 494.88 438.93 502.13 429.4 522.9C423.16 536.52 424.04 550.42 425.94 564.86C426.81 571.44 431.02 578.21 428.75 584.81C419.95 580.88 411.02 567.28 405.27 559.54C379.28 524.58 384.42 480.89 409.74 447.37C423.42 429.27 443.39 414.94 450.86 392.81C455.28 379.75 453.98 368.23 447.72 356C444.73 350.15 437.96 345.11 438.05 338.18Z"/><path d="M444.44 564.49C434.36 562.81 439.13 545.75 443.21 540.13C450.01 530.78 456.88 531.04 465.72 525.92C476.63 519.6 485.85 511.68 493.71 501.88C504.24 488.73 508.63 472.42 511.1 456.01C511.39 454.07 510.51 452 510.86 450.09C511.51 446.57 516.2 446.24 518.63 447.75C524.23 451.22 525.03 459.48 526.89 465.14C528.42 469.8 529.77 474.04 529.51 479.02C528.82 492.18 517.45 513.23 508.12 522.42C502.69 527.77 495.2 532.39 488.4 535.79C483.61 538.18 478.34 540.91 473.13 542.14C467.62 543.45 461.57 543.07 456.4 545.63C448.92 549.33 448.08 557.93 444.44 564.49Z"/><path d="M401.88 409.68C399.91 415.08 396 419.83 393.36 424.96C389.49 432.5 387.37 442.11 385.72 450.4C383.35 462.31 385.22 480.27 380.94 490.73C370.77 490.1 365.99 475.55 364.2 467.24C360.27 448.95 362.55 441.29 374.3 426.62C377.5 422.62 379.89 419.05 384.2 416.12C389.75 412.35 394.78 408.2 401.88 409.68Z"/></g>
+            </g>
+          </g>
+        </svg>
+        <!-- spark god -> torch -->
+        <circle r="5" fill="#f3c27a">
+          <animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.1;.3;1" calcMode="linear" path="M250 120 C 220 125 190 145 170 172"/>
+          <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.1;.29;.31;1" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <!-- three vials lit in turn; spark travels torch -> each vial -->
+        <g id="vials">
+          <g>
+            <circle cx="350" cy="350" r="48" fill="url(#g3)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.45;.5;.94;1" dur="6s" repeatCount="indefinite"/></circle>
+            <rect x="336" y="300" width="28" height="12" rx="2" fill="#7a4fb0"/><rect x="332" y="312" width="36" height="76" rx="6" fill="none" stroke="#f2f1ed" stroke-opacity=".7" stroke-width="1.5"/>
+            <rect x="334" y="342" width="32" height="44" rx="4" fill="#e8a24a" opacity="0"><animate attributeName="opacity" values="0;0;.85;.85;0" keyTimes="0;.45;.5;.94;1" dur="6s" repeatCount="indefinite"/></rect>
+          </g>
+          <g>
+            <circle cx="430" cy="350" r="48" fill="url(#g3)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.6;.65;.94;1" dur="6s" repeatCount="indefinite"/></circle>
+            <rect x="416" y="300" width="28" height="12" rx="2" fill="#7a4fb0"/><rect x="412" y="312" width="36" height="76" rx="6" fill="none" stroke="#f2f1ed" stroke-opacity=".7" stroke-width="1.5"/>
+            <rect x="414" y="342" width="32" height="44" rx="4" fill="#e8a24a" opacity="0"><animate attributeName="opacity" values="0;0;.85;.85;0" keyTimes="0;.6;.65;.94;1" dur="6s" repeatCount="indefinite"/></rect>
+          </g>
+          <g>
+            <circle cx="510" cy="350" r="48" fill="url(#g3)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.75;.8;.94;1" dur="6s" repeatCount="indefinite"/></circle>
+            <rect x="496" y="300" width="28" height="12" rx="2" fill="#7a4fb0"/><rect x="492" y="312" width="36" height="76" rx="6" fill="none" stroke="#f2f1ed" stroke-opacity=".7" stroke-width="1.5"/>
+            <rect x="494" y="342" width="32" height="44" rx="4" fill="#e8a24a" opacity="0"><animate attributeName="opacity" values="0;0;.85;.85;0" keyTimes="0;.75;.8;.94;1" dur="6s" repeatCount="indefinite"/></rect>
+          </g>
+        </g>
+        <circle r="4" fill="#f3c27a">
+          <animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;.33;.66;1;1" keyTimes="0;.34;.48;.63;.78;1" calcMode="linear" path="M182 190 C 260 200 300 260 350 300 C 380 290 410 290 430 300 C 460 290 490 290 510 300"/>
+          <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.33;.35;.77;.79;1" dur="6s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+    <p class="note"><b>A short loop: the god's hand lights our torch, then the torch lights three vials one after another.</b> Tells the whole story, from the gods to the bench, in about six seconds. The most motion of the three.</p>
+  </section>
+</div>
+
+</body>
+</html>
